@@ -1,0 +1,32 @@
+{
+    "name": "Bionic Eye",
+    "description": "Bionic Eye for Selected Text using the Bionic reading API",
+    "author": "Joanita Dsouza",
+    "version": "1.0",
+    "manifest_version": 3,
+    "host_permissions": ["https://bionic-reading1.p.rapidapi.com/convert"],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": ["activeTab", "scripting", "contextMenus", "tabs"],
+    "action": {
+        "default_icon": {
+            "16": "/images/bionic-eye16.png",
+            "32": "/images/bionic-eye32.png",
+            "48": "/images/bionic-eye48.png",
+            "128": "/images/bionic-eye128.png"
+        }
+    },
+    "icons": {
+        "16": "/images/bionic-eye16.png",
+        "32": "/images/bionic-eye32.png",
+        "48": "/images/bionic-eye48.png",
+        "128": "/images/bionic-eye128.png"
+    },
+    "content_scripts" : [
+        {
+            "matches": ["*://*/*"],
+            "js": ["content_scripts.js"]
+        }
+    ]
+  }
